@@ -7,7 +7,7 @@ Re-writted by: maikerumine 20170710
 --Time between two subsequent verses.
 local VERSE_INTERVAL = 0
 -- Added default verses file
-local default_verses_file = "default_mt_biblebot"
+local default_verses_file = "mt_biblebot"
 
 math.randomseed(os.time())
 
