@@ -55,7 +55,7 @@ function mt_biblebot.read_verses()
 	-- no input file found
 	if not input then
 		-- look for default file
-	local default_input = io.open(minetest.get_modpath("mt_biblebot").."/"..mt_biblebote,"r")
+	local default_input = io.open(minetest.get_modpath("mt_biblebot").."/"..default_verses_file,"r")
 		local output = io.open(minetest.get_worldpath().."/mt_biblebot","w")
 		if not default_input then
 			-- blame the admin if not found
