@@ -93,6 +93,10 @@ end
 --=======
 --BEERHOLDER CODE HERE
 function mt_biblebot.display_verse(name, verse_number)
+	if not verse_number then 
+		verse_number = name
+		name = "(anonymus)"
+	end
 	local vrs = mt_biblebot.verses[verse_number] or verse_number
 	if vrs then
 --		minetest.chat_send_all(vrs)
