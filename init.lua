@@ -189,6 +189,7 @@ local register_show_verse = {
 	params = "",
 	description = "Say a random verse",
 	func = function(name, param)
+		minetest.chat_send_all("/verse by " .. name)
 		mt_biblebot.show_verse()
 	end
 }
