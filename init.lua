@@ -92,21 +92,21 @@ end
 
 --=======
 --BEERHOLDER CODE HERE
-function mt_biblebot.display_verse(verse_number)
+function mt_biblebot.display_verse(name, verse_number)
 	local vrs = mt_biblebot.verses[verse_number] or verse_number
 	if vrs then
 --		minetest.chat_send_all(vrs)
 		for _,player in ipairs(minetest.get_connected_players()) do
 			local target = player:get_player_name()
 					minetest.chat_send_player(target, string.char(0x1b).."(c@#00ff00)"..
-													  string.format("[%s] %s", "Biblebot", vrs))	
+													  string.format("[%s] %s", "Biblebot by " .. name, vrs))	
 		end
 	end
 end
 
-function mt_biblebot.show_verse()
+function mt_biblebot.show_verse(name)
 	local vrs = string.char(0x1b).."(c@#00ff00)"..table.random(mt_biblebot.verses)
-	mt_biblebot.display_verse(vrs)
+	mt_biblebot.display_verse(name, vrs)
 end
 --=======
 
@@ -189,8 +189,7 @@ local register_show_verse = {
 	params = "",
 	description = "Say a random verse",
 	func = function(name, param)
-		minetest.chat_send_all("/verse by " .. name)
-		mt_biblebot.show_verse()
+		mt_biblebot.show_verse(name)
 	end
 }
 
